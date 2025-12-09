@@ -273,7 +273,7 @@ int main()
 
     if (!fin)
     {
-        cerr << "Error: input. txt not found!\n";
+        cerr << "Error: input.txt not found!\n";
         return 1;
     }
 
