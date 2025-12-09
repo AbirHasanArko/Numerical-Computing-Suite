@@ -582,6 +582,6 @@ Gauss Elimination is fundamental to numerous applications:
 
 ---
 
-**Part of the [Numerical Computing Suite](../) by [AbirHasanArko](https://github.com/AbirHasanArko)**
+**Part of the [Numerical Computing Suite](../) by [AbirHasanArko](https://github.com/AbirHasanArko)**   
 Roll: 2207053   
 Department of CSE, KUET   
