@@ -732,7 +732,7 @@ Point 3: x = 1.250000
 
 **Compile:**
 ```bash
-g++ -std=c++17 -O2 Newtons_Forward_Interpolation.cpp -o newtons_forward
+g++ -std=c++17 -O2 newtons-forward-interpolation.cpp -o newtons-forward
 ```
 
 **Run:**
@@ -742,7 +742,7 @@ g++ -std=c++17 -O2 Newtons_Forward_Interpolation.cpp -o newtons_forward
 
 **Alternative (one-liner):**
 ```bash
-g++ -std=c++17 -O2 Newtons_Forward_Interpolation.cpp -o newtons_forward && ./newtons_forward
+g++ -std=c++17 -O2 newtons-forward-interpolation.cpp -o newtons-forward && ./newtons_forward
 ```
 
 ---
