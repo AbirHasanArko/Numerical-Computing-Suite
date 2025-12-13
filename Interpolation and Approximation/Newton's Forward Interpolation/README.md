@@ -644,7 +644,7 @@ Enter input filename: input2.txt
 Enter output filename: output2.txt
 ```
 
-**Output (Partial):**
+**Output  (`output2.txt`):**
 ```
 ====================================
 NEWTON'S FORWARD INTERPOLATION
