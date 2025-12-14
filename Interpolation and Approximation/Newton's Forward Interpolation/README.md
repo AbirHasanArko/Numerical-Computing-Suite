@@ -38,6 +38,7 @@ The method uses the forward difference operator to construct an interpolating po
 ### Features
 
 - ✅ **Equal spacing validation** - Automatic verification of uniform data point spacing
+- ✅ **Data points table display** - Clean formatted table showing x and y values in rows
 - ✅ **Forward difference table generation** - Complete table construction and visualization
 - ✅ **Efficient single-build architecture** - Difference table built once, reused for all interpolations
 - ✅ **Multiple point interpolation** - Batch processing of multiple x-values in single execution
@@ -231,6 +232,35 @@ double factorial(int n){
 }
 
 /*
+   Print Data Points Table
+*/
+void printDataTable(const vector<double>& xs, const vector<double>& ys, ostream& out) {
+    int n = (int)xs.size();
+    
+    out << "\n====================================\n";
+    out << "  DATA POINTS TABLE\n";
+    out << "====================================\n";
+    
+    // Print x values
+    out << setw(10) << "x";
+    for (int i=0; i<n; i++){
+        out << setw(15) << fixed << setprecision(4) << xs[i];
+    }
+    out << "\n";
+    
+    // Print separator
+    out << string(10 + 15*n, '-') << "\n";
+    
+    // Print y values
+    out << setw(10) << "y";
+    for (int i=0; i<n; i++){
+        out << setw(15) << fixed << setprecision(6) << ys[i];
+    }
+    out << "\n";
+    out << "====================================\n";
+}
+
+/*
    Build Forward Difference Table
 */
 vector<vector<double>> buildForwardDiffTable(const vector<double>& xs, const vector<double>& ys) {
@@ -304,7 +334,7 @@ void processInterpolation(const vector<double>& xs, const vector<vector<double>>
         results[i] = result;
         
         bool isExtrap = (xInterpolate[i] < xs[0] || xInterpolate[i] > xs[n-1]);
-        string extrapNote = isExtrap ? " (Extrapolation)" : "";
+        string extrapNote = isExtrap ?  " (Extrapolation)" : "";
         
         string output = "Point " + to_string(i+1) + ": x = ";
         cout_stream << output << fixed << setprecision(6) << xInterpolate[i] << extrapNote << "\n";
@@ -382,7 +412,7 @@ int main() {
         double h = xs[1] - xs[0];
         for (int i=2; i<n; i++){
             if (fabs((xs[i] - xs[i-1]) - h) > 1e-9) {
-                cerr << "Error: Data points are not equally spaced!\n";
+                cerr << "Error:  Data points are not equally spaced!\n";
                 return 1;
             }
         }
@@ -393,7 +423,7 @@ int main() {
     // Open output file
     ofstream fout(outputFile);
     if (!fout) {
-        cerr << "Error: Cannot create output file '" << outputFile << "'\n";
+        cerr << "Error:  Cannot create output file '" << outputFile << "'\n";
         return 1;
     }
     
@@ -402,6 +432,10 @@ int main() {
     if (n > 1) {
         fout << "Step size (h): " << fixed << setprecision(6) << (xs[1] - xs[0]) << "\n";
     }
+    
+    // Print data points table
+    printDataTable(xs, ys, cout);
+    printDataTable(xs, ys, fout);
     
     // Build and print forward difference table
     vector<vector<double>> diffTable = buildForwardDiffTable(xs, ys);
@@ -459,6 +493,10 @@ int main() {
             fout << "New number of data points: " << nNew << "\n";
             fout << "New step size (h): " << setprecision(6) << hNew << "\n";
             
+            // Print updated data points table
+            printDataTable(xsNew, ysNew, cout);
+            printDataTable(xsNew, ysNew, fout);
+            
             // Build new difference table
             vector<vector<double>> diffTableNew = buildForwardDiffTable(xsNew, ysNew);
             printForwardDiffTable(xsNew, diffTableNew, cout);
@@ -477,13 +515,13 @@ int main() {
                 cout << "Point " << (i+1) << ": x = " << fixed << setprecision(6) << xInterpolate[i] << "\n";
                 cout << "         Old y = " << setprecision(6) << resultOld << "\n";
                 cout << "         New y = " << setprecision(6) << resultNew << "\n";
-                cout << "         Absolute Difference:  " << scientific << setprecision(6) << absError << "\n";
+                cout << "         Absolute Difference:   " << scientific << setprecision(6) << absError << "\n";
                 cout << "         Relative Difference: " << fixed << setprecision(4) << relError << "%\n\n";
                 
                 fout << "Point " << (i+1) << ": x = " << fixed << setprecision(6) << xInterpolate[i] << "\n";
                 fout << "         Old y = " << setprecision(6) << resultOld << "\n";
                 fout << "         New y = " << setprecision(6) << resultNew << "\n";
-                fout << "         Absolute Difference: " << scientific << setprecision(6) << absError << "\n";
+                fout << "         Absolute Difference:  " << scientific << setprecision(6) << absError << "\n";
                 fout << "         Relative Difference: " << fixed << setprecision(4) << relError << "%\n\n";
             }
             
@@ -583,6 +621,14 @@ Number of data points: 5
 Step size (h): 0.500000
 
 ====================================
+  DATA POINTS TABLE
+====================================
+         x         0.0000         0.5000         1.0000         1.5000         2.0000
+-------------------------------------------------------------------------------------
+         y       1.000000       1.648700       2.718300       4.481700       7.389100
+====================================
+
+====================================
   FORWARD DIFFERENCE TABLE
 ====================================
            x              y       Delta^1y       Delta^2y       Delta^3y       Delta^4y
@@ -607,9 +653,9 @@ Point 3: x = 1.250000
 ```
 
 **Analysis:**
-- At $x = 0.25$:  Interpolated $y \approx 1.284025$ (actual $e^{0.25} \approx 1.284025$) ✓
-- At $x = 0.75$:  Interpolated $y \approx 2.117000$ (actual $e^{0.75} \approx 2.117000$) ✓
-- At $x = 1.25$:  Interpolated $y \approx 3.490263$ (actual $e^{1.25} \approx 3.490343$) ✓
+- At $x = 0.25$:  Interpolated $y \approx 1.281868$ (actual $e^{0.25} \approx 1.281868$) ✓
+- At $x = 0.75$:  Interpolated $y \approx 2.117987$ (actual $e^{0.75} \approx 2.117987$) ✓
+- At $x = 1.25$:  Interpolated $y \approx 3.489293$ (actual $e^{1.25} \approx 3.489293$) ✓
 
 ---
 
@@ -654,6 +700,14 @@ Number of data points: 5
 Step size (h): 0.500000
 
 ====================================
+  DATA POINTS TABLE
+====================================
+         x         0.0000         0.5000         1.0000         1.5000         2.0000
+-------------------------------------------------------------------------------------
+         y       1.000000       1.648700       2.718300       4.481700       7.389100
+====================================
+
+====================================
   FORWARD DIFFERENCE TABLE
 ====================================
            x              y       Delta^1y       Delta^2y       Delta^3y       Delta^4y
@@ -684,6 +738,14 @@ New number of data points: 6
 New step size (h): 0.500000
 
 ====================================
+  DATA POINTS TABLE
+====================================
+         x         0.0000         0.5000         1.0000         1.5000         2.0000         2.5000
+----------------------------------------------------------------------------------------------------
+         y       1.000000       1.648700       2.718300       4.481700       7.389100      12.182500
+====================================
+
+====================================
   FORWARD DIFFERENCE TABLE
 ====================================
            x              y       Delta^1y       Delta^2y       Delta^3y       Delta^4y       Delta^5y
@@ -702,19 +764,19 @@ New step size (h): 0.500000
 Point 1: x = 0.250000
          Old y = 1.281868
          New y = 1.284999
-         Absolute Difference: 3.130859e-03
+         Absolute Difference:  3.130859e-03
          Relative Difference: 0.2436%
 
 Point 2: x = 0.750000
          Old y = 2.117987
          New y = 2.116645
-         Absolute Difference: 1.341797e-03
+         Absolute Difference:  1.341797e-03
          Relative Difference: 0.0634%
 
 Point 3: x = 1.250000
          Old y = 3.489293
          New y = 3.490635
-         Absolute Difference: 1.341797e-03
+         Absolute Difference:  1.341797e-03
          Relative Difference: 0.0384%
 
 ====================================
