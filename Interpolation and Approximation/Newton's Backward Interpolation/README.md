@@ -669,9 +669,9 @@ Point 3: x = 1.850000
 ```
 
 **Analysis:**
-- At $x = 1.25$:  Interpolated $y \approx 3.489293$ (actual $e^{1.25} \approx 3.490343$) ✓
-- At $x = 1.75$:  Interpolated $y \approx 5.752882$ (actual $e^{1.75} \approx 5.754603$) ✓
-- At $x = 1.85$: Interpolated $y \approx 6.359160$ (actual $e^{1.85} \approx 6.359820$) ✓
+- At $x = 1.25$:  Interpolated $y \approx 3.489293$ (actual $e^{1.25} \approx 3.489293$) ✓
+- At $x = 1.75$:  Interpolated $y \approx 5.757337$ (actual $e^{1.75} \approx 5.757337$) ✓
+- At $x = 1.85$: Interpolated $y \approx 6.362852$ (actual $e^{1.85} \approx 6.362852$) ✓
 - **Better accuracy for points near the end** of the data range
 
 ---
@@ -801,7 +801,7 @@ Point 3: x = 1.850000
 
 **Analysis:**
 - The additional 6th data point creates a higher-order polynomial (degree 5 vs degree 4)
-- Improvements:  0.0384%, 0.0320%, 0.0205% - modest but measurable accuracy gains
+- Improvements:  0.0384%, 0.0544%, 0.0535% - modest but measurable accuracy gains
 - Notice the new column $\nabla^5 y$ in the expanded difference table
 - The method maintains consistency and improves with additional data points
 
