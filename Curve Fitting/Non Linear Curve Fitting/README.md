@@ -1,58 +1,66 @@
-# Non-Linear Curve Fitting
+## Non-Linear Curve Fitting
+
+## 📑 Table of Contents
+- [Introduction](#-introduction-2)
+- [Common Models](#-common-models)
+- [Linearization Technique](#-linearization-technique)
+- [Algorithm](#-algorithm-2)
+- [Applications](#-applications-2)
 
 ---
 
 ## 📖 Introduction
-Non-linear curve fitting is used when data cannot be represented by a
-straight line or simple polynomial.
-Common non-linear models include:
-
-- Exponential curve: \( y = ae^{bx} \)
-- Power curve: \( y = ax^b \)
-
-These equations are transformed into linear form
-using logarithmic transformations.
+Non-linear curve fitting is used when data cannot be accurately
+represented by linear or polynomial models.
+Such equations are transformed into linear form
+before applying the least squares method.
 
 ---
 
-## 📌 Mathematical Transformation
-Example (Exponential):
+## 📌 Common Models
+Some widely used non-linear models are:
+
+- **Exponential curve**
+\[
+y = ae^{bx}
+\]
+
+- **Power curve**
+\[
+y = ax^b
+\]
+
+---
+
+## 🔄 Linearization Technique
+For the exponential model:
 
 \[
 y = ae^{bx}
 \]
 
-Taking log on both sides:
+Taking logarithm on both sides:
 
 \[
 \ln y = \ln a + bx
 \]
 
-This converts the equation into a linear form.
+This converts the equation into a linear form suitable for least squares fitting.
 
 ---
 
-## 🧾 Algorithm Steps
+## 🧾 Algorithm
 1. Read the given data points
-2. Transform the equation into linear form
-3. Apply least squares method
-4. Compute constants
-5. Convert back to original equation
-6. Display final curve equation
+2. Apply logarithmic transformation
+3. Convert the equation into linear form
+4. Apply least squares method
+5. Compute constants
+6. Convert back to original non-linear equation
+7. Display the fitted curve
 
 ---
 
-## ⚙️ Implementation Notes
-- Requires mathematical transformation
-- Accuracy depends on correct model selection
-
----
-
-## 🧪 Usage Example
-Refer to `input.txt` and `output.txt`.
-
----
-
-## 📚 References
-- S. S. Sastry  
-- B. S. Grewal
+## 🧪 Applications
+- Population growth models
+- Chemical reaction analysis
+- Biological and economic data modeling

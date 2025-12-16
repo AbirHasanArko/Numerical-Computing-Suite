@@ -1,22 +1,34 @@
-# Least Squares Polynomial (Quadratic Curve)
+## Least Squares Polynomial (Quadratic Curve)
+
+## 📑 Table of Contents
+- [Introduction](#-introduction-1)
+- [Mathematical Model](#-mathematical-model-1)
+- [Normal Equations](#-normal-equations-1)
+- [Algorithm](#-algorithm-1)
+- [Applications](#-applications-1)
 
 ---
 
 ## 📖 Introduction
-Polynomial curve fitting is used when the relationship between variables
-is **non-linear**.
-A second-degree polynomial is assumed in the form:
+When experimental data does not follow a straight-line pattern,
+a polynomial curve provides a better approximation.
+In this method, a **second-degree polynomial** is fitted using the least squares principle.
+
+---
+
+## 📌 Mathematical Model
+The quadratic polynomial is assumed as:
 
 \[
 y = a + bx + cx^2
 \]
 
-The coefficients are determined using the least squares method.
+where \(a\), \(b\), and \(c\) are constants.
 
 ---
 
-## 📌 Mathematical Formula
-Normal equations for quadratic fitting:
+## 📐 Normal Equations
+The normal equations are:
 
 \[
 \sum y = na + b\sum x + c\sum x^2
@@ -30,31 +42,21 @@ Normal equations for quadratic fitting:
 \sum x^2y = a\sum x^2 + b\sum x^3 + c\sum x^4
 \]
 
-Solving these equations gives `a`, `b`, and `c`.
+Solving these equations gives the polynomial coefficients.
 
 ---
 
-## 🧾 Algorithm Steps
-1. Read number of data points
-2. Read `x` and `y` values
+## 🧾 Algorithm
+1. Read the number of observations
+2. Read the values of \(x\) and \(y\)
 3. Compute required summations
-4. Form the system of normal equations
-5. Solve the equations
-6. Display polynomial coefficients
+4. Form the normal equations
+5. Solve for \(a\), \(b\), and \(c\)
+6. Display the fitted polynomial equation
 
 ---
 
-## ⚙️ Implementation Notes
-- Suitable for curved data trends
-- Higher accuracy than linear regression for non-linear data
-
----
-
-## 🧪 Usage Example
-Refer to `input.txt` and `output.txt`.
-
----
-
-## 📚 References
-- S. S. Sastry  
-- B. S. Grewal
+## 🧪 Applications
+- Non-linear experimental data
+- Engineering curve modeling
+- Scientific data approximation
