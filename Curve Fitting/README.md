@@ -120,7 +120,7 @@ This method is widely used in **engineering, physics, and biological data analys
 
 ---
 
-## 🗂️ Implementation Structure
+## Implementation Structure
 
 Curve Fitting/
 ├─ README.md
@@ -139,7 +139,7 @@ Curve Fitting/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Navigate to the desired method folder.
 2. Check `input.txt` for the required input format.
