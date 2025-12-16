@@ -1,0 +1,15 @@
+============================================
+           False Position Method
+============================================
+
+Polynomial Degree : 2
+Coefficients      : 1 0 1 
+
+f(x) = x^2 + 1
+
+Roots
+============================================
+No real roots found in the given range.
+
+============================================
+Computation Completed Successfully.
