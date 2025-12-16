@@ -1,21 +1,60 @@
-# Least Squares Polynomial
+# Least Squares Polynomial (Quadratic Curve)
 
-## Objective
-To fit a second-degree polynomial of the form **y = a + bx + cx²** using the least squares method.
+---
 
-## Theory
-Polynomial curve fitting is used when data does not follow a straight-line relationship.
-A quadratic polynomial provides a better approximation by minimizing the squared error.
+## 📖 Introduction
+Polynomial curve fitting is used when the relationship between variables
+is **non-linear**.
+A second-degree polynomial is assumed in the form:
 
-## Mathematical Model
-y = a + bx + cx²
+\[
+y = a + bx + cx^2
+\]
 
-## Algorithm
-1. Read the number of data points.
-2. Calculate required summations.
-3. Form normal equations.
-4. Solve the equations using elimination method.
-5. Display polynomial coefficients.
+The coefficients are determined using the least squares method.
 
-## Result
-The quadratic polynomial that best fits the given data is obtained.
+---
+
+## 📌 Mathematical Formula
+Normal equations for quadratic fitting:
+
+\[
+\sum y = na + b\sum x + c\sum x^2
+\]
+
+\[
+\sum xy = a\sum x + b\sum x^2 + c\sum x^3
+\]
+
+\[
+\sum x^2y = a\sum x^2 + b\sum x^3 + c\sum x^4
+\]
+
+Solving these equations gives `a`, `b`, and `c`.
+
+---
+
+## 🧾 Algorithm Steps
+1. Read number of data points
+2. Read `x` and `y` values
+3. Compute required summations
+4. Form the system of normal equations
+5. Solve the equations
+6. Display polynomial coefficients
+
+---
+
+## ⚙️ Implementation Notes
+- Suitable for curved data trends
+- Higher accuracy than linear regression for non-linear data
+
+---
+
+## 🧪 Usage Example
+Refer to `input.txt` and `output.txt`.
+
+---
+
+## 📚 References
+- S. S. Sastry  
+- B. S. Grewal

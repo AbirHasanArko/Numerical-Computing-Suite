@@ -1,21 +1,58 @@
 # Non-Linear Curve Fitting
 
-## Objective
-To fit a non-linear curve to a given data set using transformation techniques.
+---
 
-## Theory
-Some relationships cannot be represented using linear equations.
-Non-linear curve fitting transforms the given equation into linear form using logarithms.
+## 📖 Introduction
+Non-linear curve fitting is used when data cannot be represented by a
+straight line or simple polynomial.
+Common non-linear models include:
 
-Common models include:
-- y = ae^(bx)
-- y = ax^b
+- Exponential curve: \( y = ae^{bx} \)
+- Power curve: \( y = ax^b \)
 
-## Algorithm
-1. Transform the non-linear equation into linear form.
-2. Apply least squares method.
-3. Compute constants.
-4. Convert back to original form.
+These equations are transformed into linear form
+using logarithmic transformations.
 
-## Result
-The non-linear curve that best fits the data is determined.
+---
+
+## 📌 Mathematical Transformation
+Example (Exponential):
+
+\[
+y = ae^{bx}
+\]
+
+Taking log on both sides:
+
+\[
+\ln y = \ln a + bx
+\]
+
+This converts the equation into a linear form.
+
+---
+
+## 🧾 Algorithm Steps
+1. Read the given data points
+2. Transform the equation into linear form
+3. Apply least squares method
+4. Compute constants
+5. Convert back to original equation
+6. Display final curve equation
+
+---
+
+## ⚙️ Implementation Notes
+- Requires mathematical transformation
+- Accuracy depends on correct model selection
+
+---
+
+## 🧪 Usage Example
+Refer to `input.txt` and `output.txt`.
+
+---
+
+## 📚 References
+- S. S. Sastry  
+- B. S. Grewal

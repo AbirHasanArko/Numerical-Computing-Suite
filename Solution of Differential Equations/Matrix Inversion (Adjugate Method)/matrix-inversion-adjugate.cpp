@@ -1,16 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-Matrix Inversion using Adjugate (Adjoint) Method
-------------------------------------------------
-A^{-1} = adj(A) / det(A), if det(A) != 0
-
-Notes:
-- This implementation computes determinant using cofactor expansion (recursive),
-  which is suitable for small matrices (lab/teaching).
-*/
-
 static const double EPS = 1e-12;
 
 static vector<vector<double>> getCofactor(const vector<vector<double>>& A, int p, int q) {
@@ -39,7 +29,7 @@ static double determinant(const vector<vector<double>>& A) {
     double det = 0.0;
     int sign = 1;
 
-    // expand along first row
+
     for (int f = 0; f < n; f++) {
         auto cof = getCofactor(A, 0, f);
         det += sign * A[0][f] * determinant(cof);

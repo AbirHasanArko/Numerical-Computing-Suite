@@ -1,21 +1,58 @@
-# Least Squares Line
+# Least Squares Line (Linear Regression)
 
-## Objective
-To determine the best fitting straight line of the form **y = a + bx** for a given set of data points using the Least Squares Method.
+---
 
-## Theory
-The least squares method minimizes the sum of the squares of the vertical deviations between the observed data points and the estimated line.
-The constants **a** and **b** are calculated using the normal equations derived from partial differentiation.
+## 📖 Introduction
+The least squares line is used to find the **best fitting straight line**
+for a given set of experimental data points.
+The equation of the straight line is assumed to be:
 
-## Mathematical Model
+\[
 y = a + bx
+\]
 
-## Algorithm
-1. Read the number of data points.
-2. Read values of x and y.
-3. Compute Σx, Σy, Σxy, Σx².
-4. Calculate constants a and b.
-5. Display the fitted equation.
+The constants `a` and `b` are determined such that the sum of squares of
+errors between observed and computed values is minimum.
 
-## Result
-The best fitting straight line equation is obtained using least squares approximation.
+---
+
+## 📌 Mathematical Formula
+Normal equations for linear regression:
+
+\[
+\sum y = na + b\sum x
+\]
+
+\[
+\sum xy = a\sum x + b\sum x^2
+\]
+
+Solving these equations gives the values of `a` and `b`.
+
+---
+
+## 🧾 Algorithm Steps
+1. Read the number of data points `n`
+2. Read values of `x` and `y`
+3. Compute required summations:
+   - Σx, Σy, Σxy, Σx²
+4. Solve the normal equations
+5. Obtain constants `a` and `b`
+6. Print the fitted equation
+
+---
+
+## ⚙️ Implementation Notes
+- Applicable only for linear relationships
+- Simple and widely used regression method
+
+---
+
+## 🧪 Usage Example
+Refer to `input.txt` and `output.txt`.
+
+---
+
+## 📚 References
+- S. S. Sastry  
+- B. S. Grewal

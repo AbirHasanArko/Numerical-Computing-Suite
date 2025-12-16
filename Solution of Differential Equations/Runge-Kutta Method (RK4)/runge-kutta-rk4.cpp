@@ -1,12 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-Runge-Kutta 4th Order (RK4) for: dy/dx = f(x, y), y(x0)=y0
-----------------------------------------------------------
-This program includes a few built-in f(x,y) options for lab use.
-You can add more cases in the function f().
-*/
 
 static double f(int option, double x, double y) {
     switch (option) {
@@ -60,7 +54,7 @@ int main() {
     double x = x0, y = y0;
     int step = 0;
 
-    // To avoid floating comparison issues, compute number of steps
+
     int N = (int)round((xt - x0) / h);
     double x_end = x0 + N * h;
 
