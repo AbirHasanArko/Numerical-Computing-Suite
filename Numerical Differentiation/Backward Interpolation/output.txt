@@ -1,0 +1,14 @@
+Numerical Differentiation using Backward Interpolation
+---------------------------------------------------
+Given data points (x, y):
+  (1.000000,   1.000000)
+  (2.000000,   8.000000)
+  (3.000000,  27.000000)
+  (4.000000,  64.000000)
+  (5.000000, 125.000000)
+
+Point of differentiation (xp): 4.500000
+
+First Derivative at x = 4.500000 : 60.750000
+Second Derivative at x = 4.500000 : 27.000000
+
