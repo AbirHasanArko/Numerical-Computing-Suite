@@ -3,7 +3,7 @@
 <p align="left">
   <img src="https://img.shields.io/badge/C++-Numerical%20Methods-blue?style=for-the-badge&logo=cplusplus" alt="C++ Numerical Methods"/>
   <a href="#authors">
-    <img src="https://img.shields.io/badge/Authors-brown?style=for-the-badge&logo=github" alt="Authors"/>
+    <img src="https://img.shields.io/badge/Authors-purple?style=for-the-badge&logo=github" alt="Authors"/>
   </a>
 </p>
 
