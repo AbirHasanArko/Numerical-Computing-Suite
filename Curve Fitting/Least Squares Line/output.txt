@@ -1,1 +1,16 @@
-Equation: y = a + bx
+Number of points: 5
+
+Input Points (x, y):
+(1.000000, 2.000000)
+(2.000000, 3.000000)
+(3.000000, 5.000000)
+(4.000000, 4.000000)
+(5.000000, 6.000000)
+
+Sum of x: 15.000000
+Sum of y: 20.000000
+Sum of x*y: 69.000000
+Sum of x^2: 55.000000
+
+Equation of best fit line (Least Squares):
+y = 1.300000 + 0.900000x

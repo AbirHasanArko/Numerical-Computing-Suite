@@ -1,10 +1,8 @@
 # Solution of Linear Equations
-
 [![C++](https://img.shields.io/badge/Language-C++-00599C?style=for-the-badge&logo=cplusplus)](https://isocpp.org/)
 [![Numerical Methods](https://img.shields.io/badge/Topic-Numerical%20Methods-FF6B6B?style=for-the-badge)](https://github.com/AbirHasanArko/Numerical-Computing-Suite)
 
 ## 📑 Table of Contents
-
 - [Introduction](#-introduction)
 - [Overview of Solution Methods](#-overview-of-solution-methods)
 - [Mathematical Foundation](#-mathematical-foundation)
@@ -16,6 +14,7 @@
   - [1. Gauss Elimination Method](#1-gauss-elimination-method)
   - [2. Gauss-Jordan Elimination Method](#2-gauss-jordan-elimination-method)
   - [3. LU Decomposition Method](#3-lu-decomposition-method)
+  - [4. Matrix Inversion](#4-matrix-inversion)
 - [Method Comparison](#-method-comparison)
 - [Applications](#-applications)
 - [Implementation Structure](#-implementation-structure)
@@ -49,8 +48,8 @@ This repository implements three classical numerical methods:
 | **Gauss Elimination** | Single solution, general systems | O(n³) | Forward elimination + back substitution |
 | **Gauss-Jordan Elimination** | Finding inverse, reduced form | O(n³) | Complete diagonal reduction |
 | **LU Decomposition** | Multiple systems, repeated solving | O(n³) | Matrix factorization |
+| **Matrix Inversion** | Finding matrix inverse directly | O(n³) | Inverse via row operations |
 
----
 
 ## 📐 Mathematical Foundation
 
@@ -1294,6 +1293,28 @@ P = ┌       ┐    Represents:  swap rows 1 and 2
 ❌ **Decomposition fails** if matrix is singular  
 ❌ **Not best** for ill-conditioned systems  
 ❌ **More complex** to implement correctly  
+
+---
+
+### 4. Matrix Inversion
+
+[![View Implementation](https://img.shields.io/badge/📂-View%20Implementation-purple?style=for-the-badge)](./Matrix%20Inversion/)
+
+#### Theory
+
+**Matrix Inversion** is a method to find the inverse of a square matrix using row operations. The inverse matrix, if it exists, is useful for solving systems of linear equations, especially when multiple right-hand sides are involved. The process typically involves augmenting the matrix with the identity matrix and applying row operations to reduce the original matrix to the identity, simultaneously transforming the identity into the inverse.
+
+**Key Points:**
+- Only non-singular (det(A) ≠ 0) square matrices have an inverse.
+- The method is closely related to Gauss-Jordan elimination.
+- Useful for explicit inverse calculation and theoretical analysis, but not always efficient for large systems.
+
+**Applications:**
+- Solving Ax = b for multiple b vectors
+- Computing matrix powers and transformations
+- Theoretical linear algebra and proofs
+
+See the [Matrix Inversion implementation](./Matrix%20Inversion/) for code and examples.
 
 ---
 

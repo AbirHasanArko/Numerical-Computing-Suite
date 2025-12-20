@@ -19,28 +19,20 @@ In this method, a **second-degree polynomial** is fitted using the least squares
 ## 📌 Mathematical Model
 The quadratic polynomial is assumed as:
 
-\[
-y = a + bx + cx^2
-\]
+y = a + b·x + c·x²
 
-where \(a\), \(b\), and \(c\) are constants.
+where a, b, and c are constants.
 
 ---
 
 ## 📐 Normal Equations
 The normal equations are:
 
-\[
-\sum y = na + b\sum x + c\sum x^2
-\]
+sum(y) = n·a + b·sum(x) + c·sum(x²)
 
-\[
-\sum xy = a\sum x + b\sum x^2 + c\sum x^3
-\]
+sum(xy) = a·sum(x) + b·sum(x²) + c·sum(x³)
 
-\[
-\sum x^2y = a\sum x^2 + b\sum x^3 + c\sum x^4
-\]
+sum(x²y) = a·sum(x²) + b·sum(x³) + c·sum(x⁴)
 
 Solving these equations gives the polynomial coefficients.
 
@@ -48,10 +40,10 @@ Solving these equations gives the polynomial coefficients.
 
 ## 🧾 Algorithm
 1. Read the number of observations
-2. Read the values of \(x\) and \(y\)
+2. Read the values of x and y
 3. Compute required summations
 4. Form the normal equations
-5. Solve for \(a\), \(b\), and \(c\)
+5. Solve for a, b, and c
 6. Display the fitted polynomial equation
 
 ---

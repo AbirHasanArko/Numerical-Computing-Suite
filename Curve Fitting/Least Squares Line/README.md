@@ -20,35 +20,29 @@ between the observed values and the computed values.
 ## 📌 Mathematical Model
 The straight line equation is assumed as:
 
-\[
-y = a + bx
-\]
+y = a + b·x
 
-where \(a\) and \(b\) are constants to be determined.
+where a and b are constants to be determined.
 
 ---
 
 ## 📐 Normal Equations
 Using the least squares principle, the normal equations are:
 
-\[
-\sum y = na + b\sum x
-\]
+sum(y) = n·a + b·sum(x)
 
-\[
-\sum xy = a\sum x + b\sum x^2
-\]
+sum(xy) = a·sum(x) + b·sum(x²)
 
-Solving these equations gives the values of \(a\) and \(b\).
+Solving these equations gives the values of a and b.
 
 ---
 
 ## 🧾 Algorithm
-1. Read the number of data points \(n\)
-2. Read values of \(x\) and \(y\)
-3. Compute \(\sum x\), \(\sum y\), \(\sum xy\), \(\sum x^2\)
+1. Read the number of data points n
+2. Read values of x and y
+3. Compute sum(x), sum(y), sum(xy), sum(x²)
 4. Form the normal equations
-5. Solve for \(a\) and \(b\)
+5. Solve for a and b
 6. Display the fitted line equation
 
 ---

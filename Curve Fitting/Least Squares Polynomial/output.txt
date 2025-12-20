@@ -1,1 +1,18 @@
-Polynomial coefficients calculated.
+Number of points: 4
+
+Input Points (x, y):
+(1.000000, 1.000000)
+(2.000000, 4.000000)
+(3.000000, 9.000000)
+(4.000000, 16.000000)
+
+Sum of x: 10.000000
+Sum of x^2: 30.000000
+Sum of x^3: 100.000000
+Sum of x^4: 354.000000
+Sum of y: 30.000000
+Sum of x*y: 100.000000
+Sum of x^2*y: 354.000000
+
+Equation of best fit quadratic polynomial (Least Squares):
+y = 0.000000 + -0.000000x + 1.000000x^2

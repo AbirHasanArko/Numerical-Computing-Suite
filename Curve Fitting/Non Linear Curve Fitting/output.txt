@@ -1,1 +1,15 @@
-Non-linear curve fitting completed.
+Number of points: 4
+
+Input Points (x, y):
+(1.000000, 2.700000)
+(2.000000, 7.400000)
+(3.000000, 20.100000)
+(4.000000, 54.600000)
+
+Sum of x: 10.000000
+Sum of ln(y): 9.995485
+Sum of x*ln(y): 29.998507
+Sum of x^2: 30.000000
+
+Equation of best fit (Non-linear, y = a*exp(bx)):
+y = 0.993993 * exp(1.001959x)

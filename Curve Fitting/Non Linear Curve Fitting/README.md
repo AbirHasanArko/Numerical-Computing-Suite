@@ -21,29 +21,21 @@ before applying the least squares method.
 Some widely used non-linear models are:
 
 - **Exponential curve**
-\[
-y = ae^{bx}
-\]
+y = a·e^(b·x)
 
 - **Power curve**
-\[
-y = ax^b
-\]
+y = a·x^b
 
 ---
 
 ## 🔄 Linearization Technique
 For the exponential model:
 
-\[
-y = ae^{bx}
-\]
+y = a·e^(b·x)
 
 Taking logarithm on both sides:
 
-\[
-\ln y = \ln a + bx
-\]
+ln(y) = ln(a) + b·x
 
 This converts the equation into a linear form suitable for least squares fitting.
 
