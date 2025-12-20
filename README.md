@@ -1775,36 +1775,34 @@ Row 4: 4.0000 (expected: 4.0000)
 ## Matrix Inversion Theory
 ### Mathematical Foundation
 
-Given a square matrix $A$ of order $n$:
+Given a square matrix A of order n:
 
-- The **adjugate** (adjoint) of $A$, denoted $\operatorname{adj}(A)$, is the transpose of its cofactor matrix.
-- The **determinant** $\det(A)$ is a scalar value that determines if $A$ is invertible.
-- The **inverse** of $A$ (if it exists) is:
+- The **adjugate** (adjoint) of A, denoted adj(A), is the transpose of its cofactor matrix.
+- The **determinant** det(A) is a scalar value that determines if A is invertible.
+- The **inverse** of A (if it exists) is:
 
-$$
-A^{-1} = \frac{1}{\det(A)} \operatorname{adj}(A)
-$$
+    A^(-1) = (1/det(A)) * adj(A)
 
 ### Algorithm Steps
 
-1. **Input**: Read $n$ and the $n \times n$ matrix $A$ from file.
-2. **Determinant**: Compute $\det(A)$ using cofactor expansion.
-3. **Check Singularity**: If $|\det(A)| < \varepsilon$ (very small), matrix is singular.
-4. **Adjugate**: Compute $\operatorname{adj}(A)$ by calculating cofactors and transposing.
-5. **Inverse**: Compute $A^{-1}$ as $\operatorname{adj}(A)/\det(A)$.
+1. **Input**: Read n and the n x n matrix A from file.
+2. **Determinant**: Compute det(A) using cofactor expansion.
+3. **Check Singularity**: If |det(A)| < epsilon (very small), matrix is singular.
+4. **Adjugate**: Compute adj(A) by calculating cofactors and transposing.
+5. **Inverse**: Compute A^(-1) as adj(A)/det(A).
 6. **Output**: Write the inverse matrix to file, or report if singular.
 
 ### Singularity Detection
 
-A matrix is **singular** if $\det(A) = 0$. In practice, due to floating-point errors, a small threshold $\varepsilon$ (e.g., $10^{-12}$) is used:
+A matrix is **singular** if det(A) = 0. In practice, due to floating-point errors, a small threshold epsilon (e.g., 1e-12) is used:
 
-- If $|\det(A)| < \varepsilon$, the matrix is considered singular and not invertible.
+- If |det(A)| < epsilon, the matrix is considered singular and not invertible.
 
 ### Complexity Analysis
 
-- **Determinant (cofactor expansion)**: $O(n!)$ (not efficient for large $n$)
-- **Adjugate calculation**: $O(n^4)$ (each cofactor is a determinant)
-- **Overall**: Suitable for small matrices (e.g., $n \leq 6$)
+- **Determinant (cofactor expansion):** O(n!) (not efficient for large n)
+- **Adjugate calculation:** O(n^4) (each cofactor is a determinant)
+- **Overall:** Suitable for small matrices (e.g., n ≤ 6)
 ---
 
 ## Matrix Inversion Code
