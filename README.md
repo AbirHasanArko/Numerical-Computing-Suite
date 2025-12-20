@@ -5342,6 +5342,7 @@ an analytical integral is difficult or impossible,
 the function values are given in tabular form,
 or a quick approximation is required.
 Simpson’s rules are popular Newton–Cotes methods that assume equally spaced x-values and approximate the integrand using low-degree polynomials.
+
 ---
 
 # Simpson's One-third Rule
