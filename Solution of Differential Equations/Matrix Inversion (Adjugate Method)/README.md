@@ -8,16 +8,16 @@
 
 ## 📑 Table of Contents
 
-- [Introduction](#-introduction)
-- [Theory](#-theory)
+- [📖 Introduction](#-introduction)
+- [🧠 Theory](#-theory)
   - [Adjugate / Adjoint Matrix](#adjugate--adjoint-matrix)
   - [Inverse Formula](#inverse-formula)
   - [When Inverse Exists](#when-inverse-exists)
-- [Algorithm](#-algorithm)
-- [Complexity](#-complexity)
-- [Input & Output Format](#-input--output-format)
-- [Compilation](#-compilation)
-- [References](#-references)
+- [🧩 Algorithm](#-algorithm)
+- [⏱️ Complexity](#-complexity)
+- [🔢 Input & Output Format](#-input--output-format)
+- [🛠️ Compilation](#-compilation)
+- [📚 References](#-references)
 
 ---
 
@@ -25,9 +25,9 @@
 
 The **Adjugate (Adjoint) Method** computes the inverse of a square matrix using:
 
-- determinant, **det(A)**
-- cofactor matrix
-- adjugate matrix **adj(A)** (transpose of cofactor matrix)
+- the determinant, `det(A)`
+- the cofactor matrix
+- the adjugate matrix, `adj(A)` (the transpose of the cofactor matrix)
 
 This is a popular **teaching method** because it matches the theory taught in class.  
 However, it becomes slow for large matrices, so it is mainly used for **small n**.
@@ -38,29 +38,28 @@ However, it becomes slow for large matrices, so it is mainly used for **small n*
 
 ### Adjugate / Adjoint Matrix
 
-For a square matrix **A**, the **cofactor** of element \(a_{ij}\) is:
+For a square matrix **A**, the **cofactor** of the element `a_ij` is:
 
-\[
-C_{ij} = (-1)^{i+j} M_{ij}
-\]
+```
+C_ij = (−1)^(i+j) * M_ij
+```
+where `M_ij` is the **minor determinant** (the determinant of the matrix after removing row i and column j).
 
-where \(M_{ij}\) is the **minor determinant** (determinant of the matrix after removing row i and column j).
+The **cofactor matrix** is `[C_ij]`.
 
-The **cofactor matrix** is \([C_{ij}]\).
+The **adjugate matrix** is:
 
-The **adjugate** matrix is:
-
-\[
-\text{adj}(A) = (\text{cofactor}(A))^T
-\]
+```
+adj(A) = (cofactor(A))^T
+```
 
 ### Inverse Formula
 
-If \(\det(A) \neq 0\),
+If `det(A) ≠ 0`, then
 
-\[
-A^{-1} = \frac{\text{adj}(A)}{\det(A)}
-\]
+```
+A⁻¹ = adj(A) / det(A)
+```
 
 ### When Inverse Exists
 
@@ -71,12 +70,12 @@ A^{-1} = \frac{\text{adj}(A)}{\det(A)}
 
 ## 🧩 Algorithm
 
-1. Read \(n\) and the \(n \times n\) matrix \(A\)
-2. Compute \(\det(A)\)
-3. If \(|\det(A)|\) is near zero, report **No Inverse**
-4. Compute all cofactors \(C_{ij}\)
-5. Form adjugate: \(\text{adj}(A) = C^T\)
-6. Compute inverse: \(A^{-1} = \frac{\text{adj}(A)}{\det(A)}\)
+1. Read `n` and the `n × n` matrix `A`
+2. Compute `det(A)`
+3. If `|det(A)|` is near zero, report **No Inverse**
+4. Compute all cofactors `C_ij`
+5. Form adjugate: `adj(A) = C^T`
+6. Compute inverse: `A⁻¹ = adj(A) / det(A)`
 7. Print: input matrix, det(A), cofactor matrix, adjugate, inverse
 
 ---
@@ -105,7 +104,7 @@ an1 an2 ... ann
 
 ### Output (`output.txt`)
 - Prints the matrix
-- det(A)
+- `det(A)`
 - cofactor matrix
 - adjugate matrix
 - inverse matrix (if exists)

@@ -7,54 +7,51 @@
 ---
 
 ## 📑 Table of Contents
+
 - [📖 Introduction](#-introduction)
 - [📌 Mathematical Formula](#-mathematical-formula)
 - [✅ Validity Condition](#-validity-condition)
 - [🧾 Algorithm Steps](#-algorithm-steps)
-- [⚙️ Implementation Notes](#-implementation-notes)
+- [⚙️ Implementation Notes](#️-implementation-notes)
 - [🧪 Usage Example](#-usage-example)
 - [📚 References](#-references)
 
 ---
 
 ## 📖 Introduction
-Simpson’s 1/3 Rule approximates the integral by fitting **parabolas (2nd-degree polynomials)** over pairs of subintervals.
+
+Simpson’s 1/3 Rule approximates the integral by fitting **parabolas (2nd-degree polynomials)** over pairs of subintervals.  
 It is generally more accurate than the trapezoidal rule for smooth functions.
 
 ---
 
 ## 📌 Mathematical Formula
-Divide the interval \([a,b]\) into **n** equal subintervals (n must be even).
 
-- Step size:  
-\(
-h = \frac{b-a}{n}
-\)
+Divide the interval \([a, b]\) into **n** equal subintervals (**n** must be even).
 
-- Points:  
-\(
-x_i = a + ih,\;\; i = 0,1,\dots,n
-\)
+- **Step size:**  
+  `h = (b - a) / n`
+- **Points:**  
+  `x_i = a + i * h`, where `i = 0, 1, ..., n`
 
 Then:
 
-\[
-\int_a^b f(x)\,dx \approx \frac{h}{3}\Big[
-y_0 + y_n + 4(y_1+y_3+\dots+y_{n-1}) + 2(y_2+y_4+\dots+y_{n-2})
-\Big]
-\]
-
-where \(y_i = f(x_i)\).
+```
+∫[a to b] f(x) dx ≈ (h/3) × [ y₀ + yₙ + 4(y₁ + y₃ + ... + yₙ₋₁) + 2(y₂ + y₄ + ... + yₙ₋₂) ]
+```
+where `y_i = f(x_i)`.
 
 ---
 
 ## ✅ Validity Condition
+
 - `n` must be **even**
 - data must be **equally spaced**
 
 ---
 
 ## 🧾 Algorithm Steps
+
 1. Read `n`
 2. Read `a` and `b`
 3. Read `y0..yn` (total `n+1` values)
@@ -69,16 +66,19 @@ where \(y_i = f(x_i)\).
 ---
 
 ## ⚙️ Implementation Notes
+
 - The program supports **multiple test cases** until EOF.
 - It prints the weights and partial sums to match typical lab-output style.
 
 ---
 
 ## 🧪 Usage Example
-See `input.txt` and `output.txt` inside this folder.
+
+See [`input.txt`](input.txt) and [`output.txt`](output.txt) inside this folder.
 
 ---
 
 ## 📚 References
+
 - S. S. Sastry, *Introductory Methods of Numerical Analysis*
 - B. S. Grewal, *Numerical Methods in Engineering and Science*

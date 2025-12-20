@@ -1,4 +1,3 @@
-
 # Simpson's Three-Eighths (3/8) Rule
 
 [![View Code](https://img.shields.io/badge/View-Code-blue?style=for-the-badge&logo=cplusplus)](simpsons-three-eighths-rule.cpp)
@@ -8,61 +7,61 @@
 ---
 
 ## 📑 Table of Contents
+
 - [📖 Introduction](#-introduction)
 - [📌 Mathematical Formula](#-mathematical-formula)
 - [✅ Validity Condition](#-validity-condition)
 - [🧾 Algorithm Steps](#-algorithm-steps)
-- [⚙️ Implementation Notes](#-implementation-notes)
+- [⚙️ Implementation Notes](#️-implementation-notes)
 - [🧪 Usage Example](#-usage-example)
 - [📚 References](#-references)
 
 ---
 
 ## 📖 Introduction
-Simpson’s 3/8 Rule approximates the definite integral by fitting **cubic (3rd-degree polynomials)** over groups of **three consecutive subintervals**.
+
+Simpson’s 3/8 Rule approximates the definite integral by fitting **cubic (3rd-degree polynomials)** over groups of **three consecutive subintervals**.  
 It provides good accuracy for smooth functions when the number of subintervals is a multiple of three.
 
 ---
 
 ## 📌 Mathematical Formula
-Divide the interval \([a,b]\) into **n** equal subintervals (n must be a multiple of 3).
 
-- Step size:  
-\(
-h = \frac{b-a}{n}
-\)
+> Divide the interval ([a, b]) into **n** equal subintervals (**n** must be a multiple of 3).
 
-- Points:  
-\(
-x_i = a + ih,\;\; i = 0,1,\dots,n
-\)
+- **Step size:**  
+  `h = (b - a) / n`
+- **Points:**  
+  `x_i = a + i * h`, where `i = 0, 1, ..., n`
 
 Then:
 
-\[
-\int_a^b f(x)\,dx \approx \frac{3h}{8}\Big[
-y_0 + y_n
-+ 3(y_1 + y_2 + y_4 + y_5 + \dots)
-+ 2(y_3 + y_6 + y_9 + \dots)
-\Big]
-\]
+```
+∫[a to b] f(x) dx ≈ (3h / 8) * [
+    y₀ + yₙ
+    + 3(y₁ + y₂ + y₄ + y₅ + ...)
+    + 2(y₃ + y₆ + y₉ + ...)
+]
+```
 
-where \(y_i = f(x_i)\).
+where `yᵢ = f(xᵢ)`.
 
 ---
 
 ## ✅ Validity Condition
+
 - `n` must be a **multiple of 3**
 - data must be **equally spaced**
 
 ---
 
 ## 🧾 Algorithm Steps
+
 1. Read `n`
 2. Read `a` and `b`
 3. Read `y0..yn` (total `n+1` values)
 4. Check `n` is divisible by 3 (otherwise print error for that case)
-5. Compute `h = (b-a)/n`
+5. Compute `h = (b - a) / n`
 6. Compute:
    - `sum_3 = y1 + y2 + y4 + y5 + ...` (indices not divisible by 3)
    - `sum_2 = y3 + y6 + y9 + ...` (indices divisible by 3, excluding endpoints)
@@ -72,16 +71,19 @@ where \(y_i = f(x_i)\).
 ---
 
 ## ⚙️ Implementation Notes
+
 - The program supports **multiple test cases** until EOF.
 - It prints the weights and partial sums to match typical lab-output style.
 
 ---
 
 ## 🧪 Usage Example
-See `input.txt` and `output.txt` inside this folder.
+
+See [`input.txt`](input.txt) and [`output.txt`](output.txt) inside this folder.
 
 ---
 
 ## 📚 References
+
 - S. S. Sastry, *Introductory Methods of Numerical Analysis*
 - B. S. Grewal, *Numerical Methods in Engineering and Science*

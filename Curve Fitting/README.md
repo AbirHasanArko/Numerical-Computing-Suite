@@ -121,7 +121,7 @@ This method is widely used in **engineering, physics, and biological data analys
 ---
 
 ## Implementation Structure
-
+```
 Curve Fitting/
 ├─ README.md
 ├─ Least Squares Line/
@@ -136,7 +136,7 @@ Curve Fitting/
 ├─ non-linear-curve-fitting.cpp
 ├─ input.txt
 └─ output.txt
-
+```
 ---
 
 ## Getting Started
